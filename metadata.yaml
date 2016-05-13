@@ -1,0 +1,12 @@
+name: "auto-generated-pkg-a4559020-1d83-4964-8af5-29baf70d2fb9"
+productVersion: "7.0.1-SNAPSHOT"
+data:
+- locator: "composite-blueprint/Ansible.yaml"
+  name: "Ansible_Server"
+  description: "Ansible_Server"
+  dependencies:
+  - "software-component/Software.Ansible_Server.yaml"
+- locator: "software-component/Software.Ansible_Server.yaml"
+  name: "Ansible_Server"
+  description: "Installs latest release of Ansible"
+exportTime: "2016-05-13T21:54:31.107Z"

@@ -1,0 +1,52 @@
+'@type': "SoftwareComponentType"
+createdDate: "2016-05-09T21:23:52.054Z"
+lastUpdated: "2016-05-09T21:29:22.374Z"
+id: "Software.Ansible_Server"
+name: "Ansible_Server"
+description: "Installs latest release of Ansible"
+publishStatus: "PUBLISHED"
+publishStatusName: "Published"
+schema:
+  fields:
+  - id: "host"
+    label: "Container"
+    description: ""
+    dataType:
+      type: "ref"
+      componentTypeId: "com.vmware.csp.iaas.blueprint.service"
+      classId: "Infrastructure.Machine.Schema"
+      label: "Machine"
+    state:
+      dependencies: []
+      facets:
+      - type: "mandatory"
+        value:
+          type: "constant"
+          value:
+            type: "boolean"
+            value: true
+      - type: "visible"
+        value:
+          type: "constantClause"
+          value:
+            type: "boolean"
+            value: false
+      - type: "internal"
+        value:
+          type: "constantClause"
+          value:
+            type: "boolean"
+            value: true
+    isMultiValued: false
+containerFieldId: "host"
+lifecycleTasks:
+- createdDate: "2016-05-09T21:23:52.055Z"
+  lastUpdated: "2016-05-11T17:46:16.597Z"
+  script:
+    scriptContent: "export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/root/bin\n\
+      yum -y install epel-release\nyum -y install ansible git"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "INSTALL"
+    label: "Install"
